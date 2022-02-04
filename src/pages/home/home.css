@@ -1,0 +1,106 @@
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
+}
+
+.cabecalho{
+    align-self: flex-end;
+    justify-self: flex-start;
+    position: absolute;
+    top: 0;
+
+    padding: 40px;
+}
+
+.cabecalho button{
+    padding: 5px;
+    width: 120px;
+    border: none;
+    outline: none;
+    background-color: #805D93;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.247);
+    transition: .4s;
+    font-weight: bold;
+}
+
+.cabecalho button:hover{
+    transform: scale(1.06);
+    background-color: #009FB7;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.logo h1{
+    padding: 0 30px;;
+}
+
+.home span{
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.inputs{
+    display: flex;
+    align-items: center;
+    background-color: #011c25;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.inputs input{
+    padding: 5px;
+    width: 320px;
+    height: 45px;
+    background-color: #011c25;
+    border: none;
+    border-bottom: solid 4px #805D93;
+    outline: none;
+    margin-left: 10px;
+    color: white;
+}
+
+.inputs input:focus{
+    transition: .4s;
+    border-bottom: solid 4px #009FB7;
+}
+
+.inputs input::placeholder{
+    color: rgba(255, 255, 255, 0.637);
+}
+
+.input-area button{
+    width: 370px;
+    height: 45px;
+    background-color: #805D93;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.input-area button:hover{
+    background-color: #009FB7;
+}
