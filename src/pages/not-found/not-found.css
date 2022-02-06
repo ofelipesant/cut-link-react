@@ -1,0 +1,50 @@
+.not-found-container{
+    width: 100%;
+    height: 100vh;
+    color: #FFF;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-found-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-found-content img{
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.back-home{
+    text-decoration: none !important;
+    color: white;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.back-home::after{
+    content: '';
+    display: block;
+    margin-top: 3px;
+    border-radius: 10px;
+    background-color: white;
+    height: 4px;
+    width: 0;
+    transition: .4s;
+}
+
+.back-home:hover::after{
+    transition: .4s;
+    width: 155px;
+}
+
