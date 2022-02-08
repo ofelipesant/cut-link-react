@@ -8,11 +8,13 @@ import './home.css'
 export default function Home(){
     //use state
     const [url, setURL] = useState('')
-    const [shwoModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
     function cutLink(){
         setShowModal(true)
     }
+
+
 
     return(
         <div className="home">
@@ -41,7 +43,10 @@ export default function Home(){
                 <button class="button-cta" onClick={cutLink}>ENCURTAR</button>
             </div>
 
-            {shwoModal && (<ModalShortLink/>)}
+            {/* renderização com condicional com usestate */}
+            {showModal && (<ModalShortLink
+                closeModal={() => {setShowModal(false)}}
+            />)}
 
             
         </div>

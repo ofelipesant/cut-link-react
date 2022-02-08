@@ -1,10 +1,10 @@
 import './short-link.css'
 import{FiCopy, FiX} from "react-icons/fi"
 
-export default function ModalShortLink(){
+export default function ModalShortLink({closeModal}){
     return(
         <div className='container'>
-            <button className='close-button'>
+            <button className='close-button' onClick={closeModal}>
                 <FiX size={20}/>
             </button>
             <h2>LINK ENCURTADO</h2>

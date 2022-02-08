@@ -10,6 +10,20 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    animation: slideY 1.2s;
+}
+
+/* animação */
+@keyframes slideY{
+ from{
+    transform: translateY(90px);
+    opacity: 0;
+ }
+
+ to{
+    transform: translateY(0);
+    opacity: 1;
+ }
 }
 
 
