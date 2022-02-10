@@ -1,0 +1,43 @@
+.error-modal-container{
+    width: 230px;
+    height: 100px;
+    text-align: center;
+    background-color: #e93333;
+    box-shadow: 6px 6px 0 #805D93;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: slideY 1.2s;
+}
+
+@keyframes slideY{
+    from{
+       transform: translateY(90px);
+       opacity: 0;
+    }
+   
+    to{
+       transform: translateY(0);
+       opacity: 1;
+    }
+   }
+
+.error-modal-container span{
+    font-size: 14px !important;
+}
+
+.error-modal-container button{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}

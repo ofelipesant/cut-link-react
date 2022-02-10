@@ -1,20 +1,32 @@
 import {FiLink} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
 import {useState} from 'react'
-import ModalShortLink from '../../components/ModalShortLink' 
+import ModalShortLink from '../../components/ModalShortLink'
+//nomes dos componentes sempre em letra maiúscula 
+import CopyModal from '../../components/CopyModal'
+import ErrorModal from '../../components/ErrorModal'
 // componentes locais são importados sem as chaves
 import './home.css'
+import api from '../../services/api'
 
 export default function Home(){
     //use state
     const [url, setURL] = useState('')
     const [showModal, setShowModal] = useState(false)
+    const [showErrorModal, setShowErrorModal] = useState(false)
+    const [showCopyModal, setShowCopyModal] = useState(false)
+    const [dataAPI, setData] = useState({})
 
-    function cutLink(){
-        setShowModal(true)
+    async function cutLink(){
+       try{
+            const response = await api.post('/shorten', {long_url: url})
+            setData(response.data)
+            setURL('')
+            setShowModal(true)
+       } catch{
+           setShowErrorModal(true)
+       }
     }
-
-
 
     return(
         <div className="home">
@@ -46,9 +58,16 @@ export default function Home(){
             {/* renderização com condicional com usestate */}
             {showModal && (<ModalShortLink
                 closeModal={() => {setShowModal(false)}}
+                contentData={dataAPI}
             />)}
 
+            {showCopyModal && (<CopyModal
+                closeModalCopy={()=> setShowCopyModal(false)}
+            />)}
             
+            {showErrorModal && (<ErrorModal
+                closeErrorModal={() => {setShowErrorModal(false)}}
+            />)} 
         </div>
     )
 }
