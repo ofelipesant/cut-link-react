@@ -11,7 +11,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: slideY 1.2s;
 }
+
+@keyframes slideY{
+    from{
+       transform: translateY(90px);
+       opacity: 0;
+    }
+   
+    to{
+       transform: translateY(0);
+       opacity: 1;
+    }
+   }
 
 .copy-modal-container span{
     color: black !important;

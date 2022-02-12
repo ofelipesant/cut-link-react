@@ -1,7 +1,7 @@
 import './short-link.css'
 import{FiCopy, FiX} from "react-icons/fi"
 
-export default function ModalShortLink({closeModal, contentData}){
+export default function ModalShortLink({closeModal, contentData, show, close}){
 
     function copyURL(){
         navigator.clipboard.writeText(contentData.link)
@@ -17,7 +17,7 @@ export default function ModalShortLink({closeModal, contentData}){
 
             <div className='resultado'>
                 <span className='short-link'>{contentData.link}</span>
-                <button className='button-copy' onClick={copyURL}>
+                <button className='button-copy' onClick={copyURL, show}>
                     <FiCopy size={20}color='#FFF'/>
                 </button>
             </div>

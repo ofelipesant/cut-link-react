@@ -1,5 +1,5 @@
 import {FiLink} from 'react-icons/fi'
-import {Link} from 'react-router-dom'
+/* import {Link} from 'react-router-dom' */
 import {useState} from 'react'
 import ModalShortLink from '../../components/ModalShortLink'
 //nomes dos componentes sempre em letra maiúscula 
@@ -31,9 +31,9 @@ export default function Home(){
     return(
         <div className="home">
 
-            <header className='cabecalho'>
+           {/*  <header className='cabecalho'>
                 <Link to="/links"><button className='links'>MEUS LINKS</button></Link>
-            </header>
+            </header> */}
             
             <div className="logo">
                 <img src="./images/logo.png" alt="logo"/>
@@ -58,13 +58,17 @@ export default function Home(){
             {/* renderização com condicional com usestate */}
             {showModal && (<ModalShortLink
                 closeModal={() => {setShowModal(false)}}
+                show={()=>{setShowCopyModal(true)
+                }}
                 contentData={dataAPI}
             />)}
 
             {showCopyModal && (<CopyModal
-                closeModalCopy={()=> setShowCopyModal(false)}
+                closeCopyModal={()=>{
+                    setShowCopyModal(false)
+                }}
             />)}
-            
+
             {showErrorModal && (<ErrorModal
                 closeErrorModal={() => {setShowErrorModal(false)}}
             />)} 
